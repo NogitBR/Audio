@@ -1,3 +1,9 @@
+// https://www.youtube.com/channel/UCxP3dFjvUFjTNiBimi2R7PA
+// twitter.com/YuriNogit
+// instagram.com/YuriNogit
+
+
+
 #include <PCM.h>
 
 const unsigned char sample[] PROGMEM = {
@@ -5,17 +11,17 @@ const unsigned char sample[] PROGMEM = {
 };
 
 
-int analogPin = A3; // potentiometer wiper (middle terminal) connected to analog pin 3
-                    // outside leads to ground and +5V
-int val = 0;  // variable to store the value read
+int analogPin = A3;
+                   
+int val = 0; 
 int va2 = 0;
 void setup() {
-  Serial.begin(9600);           //  setup serial
+  Serial.begin(9600);          
 }
 
 void loop() {
-  val = analogRead(analogPin);  // read the input pin
-  Serial.println(val);          // debug value
+  val = analogRead(analogPin);  
+  Serial.println(val);         
   if (va2 >= 3) {
      startPlayback(sample, sizeof(sample));
     }
